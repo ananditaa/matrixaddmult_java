@@ -1,0 +1,63 @@
+package matrix;
+import java.util.Scanner;
+public class Matrix {
+    public static void main(String[] args) {
+        System.out.println("Enter the number of rows(=columns) of matrix: ");
+        int m;
+        Scanner s1 = new Scanner(System.in);
+        m=s1.nextInt();
+        int[][] mat1 = new int[m][m];
+        int[][] mat2 = new int[m][m];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<m;j++){
+                System.out.println("Enter "+i+" row "+j+" column element of first matrix");
+                Scanner s2= new Scanner(System.in);
+                mat1[i][j]=s2.nextInt();
+        
+            }
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<m;j++){
+                System.out.println("Enter "+i+" row "+j+" column element of second matrix");
+                Scanner s3= new Scanner(System.in);
+                mat2[i][j]=s3.nextInt();
+        
+            }
+        }
+        System.out.println("Choose one.\n1.Matrix addition.\n2.Matrix multiplication\n");
+        int choice;
+        Scanner s4= new Scanner(System.in);
+        choice=s4.nextInt();
+        switch (choice){
+            case 1:
+                for(int i=0;i<m;i++){
+                    for(int j=0;j<m;j++){
+                        System.out.print(mat1[i][j]+mat2[i][j]+" ");
+                    }
+                    System.out.println();
+                
+                }
+            break; 
+            case 2:
+                for(int i=0;i<m;i++){
+                    for(int j=0;j<m;j++){
+                        int sum=0;
+                        for(int k=0;k<m;k++){
+                            sum=sum+(mat1[i][k]*mat2[k][j]);
+                        }
+                        System.out.print(sum+" ");
+                    }
+                    System.out.println();
+                }
+            break;
+                
+            
+        }
+        
+        
+        
+        
+    
+    }
+    
+}
